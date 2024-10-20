@@ -68,18 +68,20 @@
   * [compile the source code](doc/getting-started/getting-started/installation.md)
 
 ### Starting `lightningd`
-* TODO:
-#### Regtest (local, fast-start) Option
-If you want to experiment with `lightningd`, there's a script to set
-up a `bitcoind` regtest test network of two local lightning nodes,
-which provides a convenient `start_ln` helper. See the notes at the top
-of the `startup_regtest.sh` file for details on how to use it.
 
-```bash
-. contrib/startup_regtest.sh
-```
+#### Regtest (local, fast-start) Option
+
+* ```bash
+  . contrib/startup_regtest.sh
+  ```
+  * goal
+    * experiment with `lightningd`
+  * == script / set up a `bitcoind` regtest test network / 2 local lightning nodes /
+    * have `start_ln` helper
+    * check notes | top of the `startup_regtest.sh`
 
 #### Mainnet Option
+* TODO:
 To test with real bitcoin,  you will need to have a local `bitcoind` node running:
 
 ```bash
