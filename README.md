@@ -1,6 +1,11 @@
 # Core Lightning (CLN): A specification compliant Lightning Network implementation in C
 
-Core Lightning (previously c-lightning) is a lightweight, highly customizable and [standard compliant][std] implementation of the Lightning Network protocol.
+* Core Lightning
+  * previously c-lightning
+  * == implementation of the Lightning Network protocol /
+    * lightweight
+    * highly customizable
+    * [standard compliant][std]
 
 * [Getting Started](#getting-started)
     * [Installation](#installation)
@@ -27,27 +32,43 @@ Core Lightning (previously c-lightning) is a lightweight, highly customizable an
 [![Discord][discord-badge]][discord]
 [![Irc][IRC-badge]][IRC]
 
-This implementation has been in production use on the Bitcoin mainnet since early 2018, with the launch of the [Blockstream Store][blockstream-store-blog].
-We recommend getting started by experimenting on `testnet` (or `regtest`), but the implementation is considered stable and can be safely used on mainnet.
-
-Any help testing the implementation, reporting bugs, or helping with outstanding issues is very welcome.
-Don't hesitate to reach out to us on [Build-on-L2][bol2], or on the implementation-specific [mailing list][ml1], or on the Lightning Network-wide [mailing list][ml2], or on [CLN Discord][discord], or on [CLN Telegram][telegram], or on IRC at [dev][irc1]/[gen][irc2] channel.
+* uses
+  * in production | Bitcoin mainnet 2018+
+    * launch of the [Blockstream Store][blockstream-store-blog]
+    * pretty stable
+* recommendations
+  * experiment | `testnet` (or `regtest`)
+* ways to reach out
+  * [Build-on-L2][bol2]
+  * implementation-specific [mailing list][ml1]
+  * Lightning Network-wide [mailing list][ml2]
+  * [CLN Discord][discord]
+  * [CLN Telegram][telegram]
+  * IRC | [dev][irc1]/[gen][irc2] channel
 
 ## Getting Started
 
-Core Lightning only works on Linux and macOS, and requires a locally (or remotely) running `bitcoind` (version 25.0 or above) that is fully caught up with the network you're running on, and relays transactions (ie with `blocksonly=0`).
-Pruning (`prune=n` option in `bitcoin.conf`) is partially supported, see [here](#pruning) for more details.
+* requirements
+  * OS
+    * Linux
+    * macOS
+  * running `bitcoind` v25.0+ locally or remotely /
+    * -- fully caught up with the -- network / you're running on
+    * relays transactions (== `blocksonly=0`)
+* Pruning
+  * `prune=n` option | `bitcoin.conf`
+  * partially supported
+  * [more details](#pruning)
 
 ### Installation
 
-There are 4 supported installation options:
-
- - Installation of a pre-compiled binary from the [release page][releases] on GitHub.
- - Using one of the [provided docker images][dockerhub] on the Docker Hub.
- - Compiling the source code yourself as described in the [installation documentation](doc/getting-started/getting-started/installation.md).
+* supported installation options
+  * [pre-compiled binary | release page][releases] | GitHub
+  * [provided docker images][dockerhub] | Docker Hub
+  * [compile the source code](doc/getting-started/getting-started/installation.md)
 
 ### Starting `lightningd`
-
+* TODO:
 #### Regtest (local, fast-start) Option
 If you want to experiment with `lightningd`, there's a script to set
 up a `bitcoind` regtest test network of two local lightning nodes,
