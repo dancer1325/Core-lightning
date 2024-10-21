@@ -229,7 +229,7 @@ If you encrypt your `hsm_secret`, you will have to pass the `--encrypted-hsm` st
 
 ### Developers
 
-Developers wishing to contribute should start with the developer guide [here](doc/contribute-to-core-lightning/coding-style-guidelines.md).
+* [contribution guidelines](doc/contribute-to-core-lightning/coding-style-guidelines.md)
 
 [blockstream-store-blog]: https://blockstream.com/2018/01/16/en-lightning-charge/
 [std]: https://github.com/lightning/bolts
