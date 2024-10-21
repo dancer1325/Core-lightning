@@ -33,7 +33,7 @@ We have to stop somewhere.  The two tools here are extracting deeply-indented co
 
 ## Tabs and indentaion
 
-The C code uses TAB charaters with a visual indentation of 8 whitespaces.  
+The C code uses TAB charaters with a visual indentation of 8 whitespaces.
 If you submit code for a review, make sure your editor knows this.
 
 When breaking a line with more than 80 characters, align parameters and arguments like so:
@@ -80,7 +80,7 @@ Avoid double-initialization of variables; it's better to set them when they're k
 
 ```c
 	bool is_foo;
-	
+
 	if (bar == foo)
 		is_foo = true;
 	else
@@ -152,21 +152,22 @@ Changing existing input parameters is harder, and should generally be avoided.  
 
 ## Github Workflows
 
-We have adopted a number of workflows to facilitate the development of Core Lightning, and to make things more pleasant for contributors.
+* goal
+  * facilitate the development of Core Lightning
 
 ### Changelog Entries in Commit Messages
 
-We are maintaining a changelog in the top-level directory of this project. However since every pull request has a tendency to touch the file and therefore create merge-conflicts we decided to derive the changelog file from the pull requests that were added between releases. In order for a pull request to show up in the changelog at least one of its commits will have to have a line with one of the following prefixes:
-
-- `Changelog-Added: ` if the pull request adds a new feature
-- `Changelog-Changed: ` if a feature has been modified and might require changes on the user side
-- `Changelog-Deprecated: ` if a feature has been marked for deprecation, but not yet removed
-- `Changelog-Fixed: ` if a bug has been fixed
-- `Changelog-Removed: ` if a (previously deprecated) feature has been removed
-- `Changelog-Experimental: ` if it only affects experimental- config options
-
-In case you think the pull request is small enough not to require a changelog entry please use `Changelog-None` in one of the commit messages to opt out.
-
-Under some circumstances a feature may be removed even without deprecation warning if it was not part of a released version yet, or the removal is urgent.
-
-In order to ensure that each pull request has the required `Changelog-*:` line for the changelog our trusty @bitcoin-bot will check logs whenever a pull request is created or updated and search for the required line. If there is no such line it'll mark the pull request as `pending` to call out the need for an entry.
+* changelog | top-level directory
+  * it's maintained
+  * changelog file -- from the -- PR /
+    * == 👀>=1 commit / PR, MUST have a line / prefix 👀
+      * `Changelog-Added: ` if the pull request adds a new feature
+      * `Changelog-Changed: ` if a feature has been modified and might require changes | user side
+      * `Changelog-Deprecated: ` if a feature has been marked for deprecation, BUT NOT yet removed
+      * `Changelog-Fixed: ` if a bug has been fixed
+      * `Changelog-Removed: ` if a (previously deprecated) feature has been removed
+      * `Changelog-Experimental: ` if it only affects experimental- config options
+      * `Changelog-None`: if PR is small enough / NOT require a changelog entry
+    * @bitcoin-bot checks it / PR
+      * if it's NOT found -> PR is marked as `pending`
+  * if a feature was NOT part of a released version OR urgen removal -> 👀POSSIBLE to have been removed WITHOUT changelog commentary 👀
