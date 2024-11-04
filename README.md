@@ -81,28 +81,32 @@
     * check notes | top of the `startup_regtest.sh`
 
 #### Mainnet Option
-* TODO:
-To test with real bitcoin,  you will need to have a local `bitcoind` node running:
 
-```bash
-bitcoind -daemon
-```
+* 👀== test with real bitcoin 👀
+* steps
+  * 
+    ```bash
+    # run a `bitcoind` node
+    bitcoind -daemon
+    ```
 
-Wait until `bitcoind` has synchronized with the network.
-
-Make sure that you do not have `walletbroadcast=0` in your `~/.bitcoin/bitcoin.conf`, or you may run into trouble.
-Notice that running `lightningd` against a pruned node may cause some issues if not managed carefully, see [below](#pruning) for more information.
-
-You can start `lightningd` with the following command:
-
-```bash
-lightningd --network=bitcoin --log-level=debug
-```
-
-This creates a `.lightning/` subdirectory in your home directory: see `man -l doc/lightningd.8` (or https://docs.corelightning.org/docs) for more runtime options.
+    * wait UNTIL `bitcoind` -- has synchronized with the -- network
+    * recommendations
+      * do NOT have `walletbroadcast=0` | your `~/.bitcoin/bitcoin.conf`
+        * Reason: 🧠 you may run into trouble 🧠
+  *
+    ```bash
+    # start `lightningd` 
+    lightningd --network=bitcoin --log-level=debug
+    ```
+    * if NOT managed carefully -> see [below](#pruning)
+    * creates a `.lightning/` | your home directory
+    * see `man -l doc/lightningd.8` (or https://docs.corelightning.org/docs)
+---
 
 ### Using The JSON-RPC Interface
 
+* TODO:
 Core Lightning exposes a [JSON-RPC 2.0][jsonrpcspec] interface over a Unix Domain socket; the `lightning-cli` tool can be used to access it, or there is a [python client library](contrib/pyln-client).
 
 You can use `lightning-cli help` to print a table of RPC methods; `lightning-cli help <command>`
